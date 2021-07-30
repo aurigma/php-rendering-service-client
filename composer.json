@@ -1,5 +1,5 @@
 {
-    "name": "aurignma/php-rendering-service-client",
+    "name": "aurigma/php-rendering-service-client",
     "description": "PHP API Client for Rendering service of Customer's Canvas web-to-print system.",
     "keywords": [
         "customers canvas",
