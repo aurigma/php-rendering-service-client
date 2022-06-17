@@ -73,7 +73,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://dm-renderingservice.azurewebsites.net/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
