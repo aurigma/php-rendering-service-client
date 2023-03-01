@@ -35,7 +35,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * ProjectItemInfo Class Doc Comment
  *
  * @category Class
- * @description Project item information
+ * @description Project item information.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -237,7 +237,7 @@ class ProjectItemInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Project item name
+     * @param string|null $name Project item name.
      *
      * @return self
      */
@@ -261,7 +261,7 @@ class ProjectItemInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quantity
      *
-     * @param int|null $quantity Project item quantity
+     * @param int|null $quantity Project item quantity.
      *
      * @return self
      */
@@ -285,7 +285,7 @@ class ProjectItemInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fields
      *
-     * @param array<string,mixed>|null $fields Project item custom informational fields
+     * @param array<string,mixed>|null $fields Project item custom informational fields.
      *
      * @return self
      */
@@ -309,7 +309,7 @@ class ProjectItemInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets design_ids
      *
-     * @param string[]|null $design_ids Project item design identifiers
+     * @param string[]|null $design_ids Project item design identifiers.
      *
      * @return self
      */

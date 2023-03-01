@@ -33,7 +33,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * RenderingJobStatus Class Doc Comment
  *
  * @category Class
- * @description Rendering job status
+ * @description Rendering job status.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -48,6 +48,7 @@ class RenderingJobStatus
     const COMPLETED = 'Completed';
     const FAILED = 'Failed';
     const RECOVERED = 'Recovered';
+    const DISCARDED = 'Discarded';
     
     /**
      * Gets allowable values of the enum
@@ -61,6 +62,7 @@ class RenderingJobStatus
             self::COMPLETED,
             self::FAILED,
             self::RECOVERED,
+            self::DISCARDED,
         ];
     }
 }

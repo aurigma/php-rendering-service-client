@@ -35,7 +35,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * CreateRenderingJobDto Class Doc Comment
  *
  * @category Class
- * @description Dto class, containing create operation parameters for rendering job entity
+ * @description Dto class, containing parameters for creating rendering job.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -249,7 +249,7 @@ class CreateRenderingJobDto implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets tasks
      *
-     * @param \Aurigma\RenderingService\Model\CreateRenderingTaskDto[]|null $tasks Rendering task list
+     * @param \Aurigma\RenderingService\Model\CreateRenderingTaskDto[]|null $tasks Rendering task list.
      *
      * @return self
      */

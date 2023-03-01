@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateRenderingTaskDto
+ * RenderingTaskDto
  *
  * PHP version 7.2
  *
@@ -32,10 +32,9 @@ use \ArrayAccess;
 use \Aurigma\RenderingService\ObjectSerializer;
 
 /**
- * CreateRenderingTaskDto Class Doc Comment
+ * RenderingTaskDto Class Doc Comment
  *
  * @category Class
- * @description Dto class, containing parameters for creating rendering task.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +42,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerializable
+class RenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateRenderingTaskDto';
+    protected static $openAPIModelName = 'RenderingTaskDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,6 +60,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'description' => 'string',
+        'id' => 'string',
         'name' => 'string',
         'namespace' => 'string',
         'type' => 'string',
@@ -68,8 +68,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         'parameters' => 'array<string,mixed>',
         'output_artifacts' => 'string[]',
         'final_artifacts' => 'string[]',
+        'status' => '\Aurigma\RenderingService\Model\RenderingTaskStatus',
+        'requested' => '\DateTime',
+        'started' => '\DateTime',
+        'finished' => '\DateTime',
         'processing_timeout' => 'int',
-        'max_auto_retry_count' => 'int'
+        'auto_retry_count' => 'int',
+        'long_execution' => 'bool'
     ];
 
     /**
@@ -81,6 +86,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'description' => null,
+        'id' => null,
         'name' => null,
         'namespace' => null,
         'type' => null,
@@ -88,8 +94,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         'parameters' => null,
         'output_artifacts' => null,
         'final_artifacts' => null,
+        'status' => null,
+        'requested' => 'date-time',
+        'started' => 'date-time',
+        'finished' => 'date-time',
         'processing_timeout' => 'int32',
-        'max_auto_retry_count' => 'int32'
+        'auto_retry_count' => 'int32',
+        'long_execution' => null
     ];
 
     /**
@@ -120,6 +131,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'description' => 'description',
+        'id' => 'id',
         'name' => 'name',
         'namespace' => 'namespace',
         'type' => 'type',
@@ -127,8 +139,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         'parameters' => 'parameters',
         'output_artifacts' => 'outputArtifacts',
         'final_artifacts' => 'finalArtifacts',
+        'status' => 'status',
+        'requested' => 'requested',
+        'started' => 'started',
+        'finished' => 'finished',
         'processing_timeout' => 'processingTimeout',
-        'max_auto_retry_count' => 'maxAutoRetryCount'
+        'auto_retry_count' => 'autoRetryCount',
+        'long_execution' => 'longExecution'
     ];
 
     /**
@@ -138,6 +155,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'description' => 'setDescription',
+        'id' => 'setId',
         'name' => 'setName',
         'namespace' => 'setNamespace',
         'type' => 'setType',
@@ -145,8 +163,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         'parameters' => 'setParameters',
         'output_artifacts' => 'setOutputArtifacts',
         'final_artifacts' => 'setFinalArtifacts',
+        'status' => 'setStatus',
+        'requested' => 'setRequested',
+        'started' => 'setStarted',
+        'finished' => 'setFinished',
         'processing_timeout' => 'setProcessingTimeout',
-        'max_auto_retry_count' => 'setMaxAutoRetryCount'
+        'auto_retry_count' => 'setAutoRetryCount',
+        'long_execution' => 'setLongExecution'
     ];
 
     /**
@@ -156,6 +179,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'description' => 'getDescription',
+        'id' => 'getId',
         'name' => 'getName',
         'namespace' => 'getNamespace',
         'type' => 'getType',
@@ -163,8 +187,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         'parameters' => 'getParameters',
         'output_artifacts' => 'getOutputArtifacts',
         'final_artifacts' => 'getFinalArtifacts',
+        'status' => 'getStatus',
+        'requested' => 'getRequested',
+        'started' => 'getStarted',
+        'finished' => 'getFinished',
         'processing_timeout' => 'getProcessingTimeout',
-        'max_auto_retry_count' => 'getMaxAutoRetryCount'
+        'auto_retry_count' => 'getAutoRetryCount',
+        'long_execution' => 'getLongExecution'
     ];
 
     /**
@@ -225,6 +254,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['description'] = $data['description'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['namespace'] = $data['namespace'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
@@ -232,8 +262,13 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['parameters'] = $data['parameters'] ?? null;
         $this->container['output_artifacts'] = $data['output_artifacts'] ?? null;
         $this->container['final_artifacts'] = $data['final_artifacts'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['requested'] = $data['requested'] ?? null;
+        $this->container['started'] = $data['started'] ?? null;
+        $this->container['finished'] = $data['finished'] ?? null;
         $this->container['processing_timeout'] = $data['processing_timeout'] ?? null;
-        $this->container['max_auto_retry_count'] = $data['max_auto_retry_count'] ?? null;
+        $this->container['auto_retry_count'] = $data['auto_retry_count'] ?? null;
+        $this->container['long_execution'] = $data['long_execution'] ?? null;
     }
 
     /**
@@ -285,6 +320,30 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Rendering task identifier.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string|null
@@ -321,7 +380,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets namespace
      *
-     * @param string|null $namespace Rendering task namespace. It is used to find appropriate task processor in conjunction with 'Type' property.
+     * @param string|null $namespace Rendering task namespace. It is used to find appropriate task processor.
      *
      * @return self
      */
@@ -345,7 +404,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets type
      *
-     * @param string|null $type Rendering task type. It is used to find appropriate task processor in conjunction with 'Namespace' property.  ///
+     * @param string|null $type Rendering task type. It is used to find appropriate task processor.  ///
      *
      * @return self
      */
@@ -393,7 +452,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets parameters
      *
-     * @param array<string,mixed>|null $parameters Task processing parameters dictinary.
+     * @param array<string,mixed>|null $parameters Rendering task processing parameters.
      *
      * @return self
      */
@@ -453,6 +512,102 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets status
+     *
+     * @return \Aurigma\RenderingService\Model\RenderingTaskStatus|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \Aurigma\RenderingService\Model\RenderingTaskStatus|null $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets requested
+     *
+     * @return \DateTime|null
+     */
+    public function getRequested()
+    {
+        return $this->container['requested'];
+    }
+
+    /**
+     * Sets requested
+     *
+     * @param \DateTime|null $requested Rendering task 'processing requested' timestamp.
+     *
+     * @return self
+     */
+    public function setRequested($requested)
+    {
+        $this->container['requested'] = $requested;
+
+        return $this;
+    }
+
+    /**
+     * Gets started
+     *
+     * @return \DateTime|null
+     */
+    public function getStarted()
+    {
+        return $this->container['started'];
+    }
+
+    /**
+     * Sets started
+     *
+     * @param \DateTime|null $started Rendering task 'processing started' timestamp.
+     *
+     * @return self
+     */
+    public function setStarted($started)
+    {
+        $this->container['started'] = $started;
+
+        return $this;
+    }
+
+    /**
+     * Gets finished
+     *
+     * @return \DateTime|null
+     */
+    public function getFinished()
+    {
+        return $this->container['finished'];
+    }
+
+    /**
+     * Sets finished
+     *
+     * @param \DateTime|null $finished Rendering task 'processing completed' timestamp.
+     *
+     * @return self
+     */
+    public function setFinished($finished)
+    {
+        $this->container['finished'] = $finished;
+
+        return $this;
+    }
+
+    /**
      * Gets processing_timeout
      *
      * @return int|null
@@ -465,7 +620,7 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets processing_timeout
      *
-     * @param int|null $processing_timeout Task processing timeout.
+     * @param int|null $processing_timeout Rendering task processing timeout.
      *
      * @return self
      */
@@ -477,25 +632,49 @@ class CreateRenderingTaskDto implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets max_auto_retry_count
+     * Gets auto_retry_count
      *
      * @return int|null
      */
-    public function getMaxAutoRetryCount()
+    public function getAutoRetryCount()
     {
-        return $this->container['max_auto_retry_count'];
+        return $this->container['auto_retry_count'];
     }
 
     /**
-     * Sets max_auto_retry_count
+     * Sets auto_retry_count
      *
-     * @param int|null $max_auto_retry_count Task processing automatic retry count limit.
+     * @param int|null $auto_retry_count Rendering task automatic retry count value.
      *
      * @return self
      */
-    public function setMaxAutoRetryCount($max_auto_retry_count)
+    public function setAutoRetryCount($auto_retry_count)
     {
-        $this->container['max_auto_retry_count'] = $max_auto_retry_count;
+        $this->container['auto_retry_count'] = $auto_retry_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets long_execution
+     *
+     * @return bool|null
+     */
+    public function getLongExecution()
+    {
+        return $this->container['long_execution'];
+    }
+
+    /**
+     * Sets long_execution
+     *
+     * @param bool|null $long_execution Rendering task 'long execution' tag.
+     *
+     * @return self
+     */
+    public function setLongExecution($long_execution)
+    {
+        $this->container['long_execution'] = $long_execution;
 
         return $this;
     }

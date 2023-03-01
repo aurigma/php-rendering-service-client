@@ -35,7 +35,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * RenderingJobDto Class Doc Comment
  *
  * @category Class
- * @description RenderingJob dto class
+ * @description Rendering job dto class.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,7 +61,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'project' => '\Aurigma\RenderingService\Model\ProjectInfo',
-        'tasks' => '\Aurigma\RenderingService\Model\RenderingTask[]',
+        'tasks' => '\Aurigma\RenderingService\Model\RenderingTaskDto[]',
         'status' => '\Aurigma\RenderingService\Model\RenderingJobStatus',
         'status_description' => 'string',
         'created' => '\DateTime',
@@ -293,7 +293,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tasks
      *
-     * @return \Aurigma\RenderingService\Model\RenderingTask[]|null
+     * @return \Aurigma\RenderingService\Model\RenderingTaskDto[]|null
      */
     public function getTasks()
     {
@@ -303,7 +303,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tasks
      *
-     * @param \Aurigma\RenderingService\Model\RenderingTask[]|null $tasks Rendering task list
+     * @param \Aurigma\RenderingService\Model\RenderingTaskDto[]|null $tasks Rendering task list.
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status_description
      *
-     * @param string|null $status_description Rendering job status description (error message if rendering job is in error state, otherwise empty)
+     * @param string|null $status_description Rendering job status description (error message if rendering job is in error state, otherwise empty).
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created
      *
-     * @param \DateTime|null $created Rendering job creation timestamp
+     * @param \DateTime|null $created Rendering job creation timestamp.
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets started
      *
-     * @param \DateTime|null $started Rendering job launch time stamp
+     * @param \DateTime|null $started Rendering job launch timestamp.
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets finished
      *
-     * @param \DateTime|null $finished Rendering job completion time stamp
+     * @param \DateTime|null $finished Rendering job completion timestamp.
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tenant_id
      *
-     * @param int|null $tenant_id Entity tenant identifier
+     * @param int|null $tenant_id Entity tenant identifier.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id Entity unique identifier
+     * @param string|null $id Entity unique identifier.
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets owner_id
      *
-     * @param string|null $owner_id Entity owner identifier
+     * @param string|null $owner_id Entity owner identifier.
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class RenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_modified
      *
-     * @param \DateTime|null $last_modified Last entity modification date and time
+     * @param \DateTime|null $last_modified Last entity modification date and time.
      *
      * @return self
      */

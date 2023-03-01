@@ -8,12 +8,11 @@ docs/Model/CreateRenderingJobDto.md
 docs/Model/CreateRenderingTaskDto.md
 docs/Model/PagedOfRenderingJobDto.md
 docs/Model/ProblemDetails.md
-docs/Model/ProductSpecifiationInfo.md
 docs/Model/ProjectInfo.md
 docs/Model/ProjectItemInfo.md
 docs/Model/RenderingJobDto.md
 docs/Model/RenderingJobStatus.md
-docs/Model/RenderingTask.md
+docs/Model/RenderingTaskDto.md
 docs/Model/RenderingTaskStatus.md
 git_push.sh
 lib/ApiException.php
@@ -27,12 +26,11 @@ lib/Model/CreateRenderingTaskDto.php
 lib/Model/ModelInterface.php
 lib/Model/PagedOfRenderingJobDto.php
 lib/Model/ProblemDetails.php
-lib/Model/ProductSpecifiationInfo.php
 lib/Model/ProjectInfo.php
 lib/Model/ProjectItemInfo.php
 lib/Model/RenderingJobDto.php
 lib/Model/RenderingJobStatus.php
-lib/Model/RenderingTask.php
+lib/Model/RenderingTaskDto.php
 lib/Model/RenderingTaskStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist

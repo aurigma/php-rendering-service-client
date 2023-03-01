@@ -35,7 +35,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * ProjectInfo Class Doc Comment
  *
  * @category Class
- * @description Project information
+ * @description Project information.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'owner_id' => 'string',
         'name' => 'string',
-        'product_specification' => '\Aurigma\RenderingService\Model\ProductSpecifiationInfo',
+        'order_id' => 'string',
+        'order_number' => 'string',
+        'customer_id' => 'string',
+        'customer_name' => 'string',
         'items' => '\Aurigma\RenderingService\Model\ProjectItemInfo[]'
     ];
 
@@ -78,7 +81,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int32',
         'owner_id' => null,
         'name' => null,
-        'product_specification' => null,
+        'order_id' => null,
+        'order_number' => null,
+        'customer_id' => null,
+        'customer_name' => null,
         'items' => null
     ];
 
@@ -112,7 +118,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'owner_id' => 'ownerId',
         'name' => 'name',
-        'product_specification' => 'productSpecification',
+        'order_id' => 'orderId',
+        'order_number' => 'orderNumber',
+        'customer_id' => 'customerId',
+        'customer_name' => 'customerName',
         'items' => 'items'
     ];
 
@@ -125,7 +134,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'owner_id' => 'setOwnerId',
         'name' => 'setName',
-        'product_specification' => 'setProductSpecification',
+        'order_id' => 'setOrderId',
+        'order_number' => 'setOrderNumber',
+        'customer_id' => 'setCustomerId',
+        'customer_name' => 'setCustomerName',
         'items' => 'setItems'
     ];
 
@@ -138,7 +150,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'owner_id' => 'getOwnerId',
         'name' => 'getName',
-        'product_specification' => 'getProductSpecification',
+        'order_id' => 'getOrderId',
+        'order_number' => 'getOrderNumber',
+        'customer_id' => 'getCustomerId',
+        'customer_name' => 'getCustomerName',
         'items' => 'getItems'
     ];
 
@@ -202,7 +217,10 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['owner_id'] = $data['owner_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['product_specification'] = $data['product_specification'] ?? null;
+        $this->container['order_id'] = $data['order_id'] ?? null;
+        $this->container['order_number'] = $data['order_number'] ?? null;
+        $this->container['customer_id'] = $data['customer_id'] ?? null;
+        $this->container['customer_name'] = $data['customer_name'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
     }
 
@@ -243,7 +261,7 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int|null $id Project identifier
+     * @param int|null $id Project identifier.
      *
      * @return self
      */
@@ -267,7 +285,7 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets owner_id
      *
-     * @param string|null $owner_id Project owner identifier
+     * @param string|null $owner_id Project owner identifier.
      *
      * @return self
      */
@@ -291,7 +309,7 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Project name
+     * @param string|null $name Project name.
      *
      * @return self
      */
@@ -303,25 +321,97 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets product_specification
+     * Gets order_id
      *
-     * @return \Aurigma\RenderingService\Model\ProductSpecifiationInfo|null
+     * @return string|null
      */
-    public function getProductSpecification()
+    public function getOrderId()
     {
-        return $this->container['product_specification'];
+        return $this->container['order_id'];
     }
 
     /**
-     * Sets product_specification
+     * Sets order_id
      *
-     * @param \Aurigma\RenderingService\Model\ProductSpecifiationInfo|null $product_specification product_specification
+     * @param string|null $order_id Project order identifier.
      *
      * @return self
      */
-    public function setProductSpecification($product_specification)
+    public function setOrderId($order_id)
     {
-        $this->container['product_specification'] = $product_specification;
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_number
+     *
+     * @return string|null
+     */
+    public function getOrderNumber()
+    {
+        return $this->container['order_number'];
+    }
+
+    /**
+     * Sets order_number
+     *
+     * @param string|null $order_number Project order number.
+     *
+     * @return self
+     */
+    public function setOrderNumber($order_number)
+    {
+        $this->container['order_number'] = $order_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_id
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customer_id'];
+    }
+
+    /**
+     * Sets customer_id
+     *
+     * @param string|null $customer_id Project order customer identifier.
+     *
+     * @return self
+     */
+    public function setCustomerId($customer_id)
+    {
+        $this->container['customer_id'] = $customer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_name
+     *
+     * @return string|null
+     */
+    public function getCustomerName()
+    {
+        return $this->container['customer_name'];
+    }
+
+    /**
+     * Sets customer_name
+     *
+     * @param string|null $customer_name Project order customer name.
+     *
+     * @return self
+     */
+    public function setCustomerName($customer_name)
+    {
+        $this->container['customer_name'] = $customer_name;
 
         return $this;
     }
@@ -339,7 +429,7 @@ class ProjectInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \Aurigma\RenderingService\Model\ProjectItemInfo[]|null $items List of project items
+     * @param \Aurigma\RenderingService\Model\ProjectItemInfo[]|null $items List of project items.
      *
      * @return self
      */

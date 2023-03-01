@@ -33,6 +33,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * RenderingTaskStatus Class Doc Comment
  *
  * @category Class
+ * @description Defines available rendering task statuses.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -47,6 +48,8 @@ class RenderingTaskStatus
     const COMPLETED = 'Completed';
     const FAILED = 'Failed';
     const REQUEST_FAILED = 'RequestFailed';
+    const PENDING = 'Pending';
+    const SKIPPED = 'Skipped';
     
     /**
      * Gets allowable values of the enum
@@ -60,6 +63,8 @@ class RenderingTaskStatus
             self::COMPLETED,
             self::FAILED,
             self::REQUEST_FAILED,
+            self::PENDING,
+            self::SKIPPED,
         ];
     }
 }

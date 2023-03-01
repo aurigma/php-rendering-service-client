@@ -35,7 +35,7 @@ use \Aurigma\RenderingService\ObjectSerializer;
  * PagedOfRenderingJobDto Class Doc Comment
  *
  * @category Class
- * @description Paged view of &lt;typeparamref name&#x3D;\&quot;TEntityDto\&quot; /&gt; list
+ * @description Paged view of &lt;typeparamref name&#x3D;\&quot;TEntityDto\&quot; /&gt; list.
  * @package  Aurigma\RenderingService
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -225,7 +225,7 @@ class PagedOfRenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets total
      *
-     * @param int|null $total Items count
+     * @param int|null $total Items count.
      *
      * @return self
      */
@@ -249,7 +249,7 @@ class PagedOfRenderingJobDto implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets items
      *
-     * @param \Aurigma\RenderingService\Model\RenderingJobDto[]|null $items Items list
+     * @param \Aurigma\RenderingService\Model\RenderingJobDto[]|null $items Items list.
      *
      * @return self
      */
