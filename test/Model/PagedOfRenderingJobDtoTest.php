@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * PagedOfRenderingJobDtoTest Class Doc Comment
  *
  * @category    Class
- * @description Paged view of &lt;typeparamref name&#x3D;\&quot;TEntityDto\&quot; /&gt; list
+ * @description Paged view of &lt;typeparamref name&#x3D;\&quot;TEntityDto\&quot; /&gt; list.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

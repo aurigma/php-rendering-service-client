@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * CreateRenderingTaskDtoTest Class Doc Comment
  *
  * @category    Class
- * @description CreateRenderingTaskDto
+ * @description Dto class, containing parameters for creating rendering task.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -74,24 +74,6 @@ class CreateRenderingTaskDtoTest extends TestCase
      * Test "CreateRenderingTaskDto"
      */
     public function testCreateRenderingTaskDto()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "processing_timeout"
-     */
-    public function testPropertyProcessingTimeout()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "max_auto_retry_count"
-     */
-    public function testPropertyMaxAutoRetryCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -164,6 +146,24 @@ class CreateRenderingTaskDtoTest extends TestCase
      * Test attribute "final_artifacts"
      */
     public function testPropertyFinalArtifacts()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "processing_timeout"
+     */
+    public function testPropertyProcessingTimeout()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "max_auto_retry_count"
+     */
+    public function testPropertyMaxAutoRetryCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

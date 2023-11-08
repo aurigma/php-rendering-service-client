@@ -74,7 +74,7 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsCreate
      *
-     * Creates new rendering job and starts execution.
+     * Creates a new rendering job and starts its execution from the very first task..
      *
      */
     public function testRenderingJobsCreate()
@@ -86,7 +86,7 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsDelete
      *
-     * Deletes specified rendering job.
+     * Deletes specified rendering job..
      *
      */
     public function testRenderingJobsDelete()
@@ -98,7 +98,7 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsDiscard
      *
-     * Discards specified rendering job and prevents execution of a next task.
+     * Discards the specified rendering job and prevents its further execution..
      *
      */
     public function testRenderingJobsDiscard()
@@ -110,7 +110,7 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsGet
      *
-     * Gets rendering job by id.
+     * Returns a rendering job by ID..
      *
      */
     public function testRenderingJobsGet()
@@ -122,7 +122,7 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsGetAll
      *
-     * Gets all entities relevant to specified query parameters.
+     * Returns all rendering jobs relevant to the specified query parameters..
      *
      */
     public function testRenderingJobsGetAll()
@@ -134,10 +134,22 @@ class RenderingJobsApiTest extends TestCase
     /**
      * Test case for renderingJobsRecover
      *
-     * Recovers specified rendering job and continues execution.
+     * Recovers the specified rendering job and continues its execution from the failed task..
      *
      */
     public function testRenderingJobsRecover()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for renderingJobsRestart
+     *
+     * Restarts the specified rendering job and begins its execution from the very first task..
+     *
+     */
+    public function testRenderingJobsRestart()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

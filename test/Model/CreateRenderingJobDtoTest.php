@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * CreateRenderingJobDtoTest Class Doc Comment
  *
  * @category    Class
- * @description Dto class, containing create operation parameters for rendering job entity
+ * @description Dto class, containing parameters for creating rendering job.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

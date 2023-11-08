@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * ProjectItemInfoTest Class Doc Comment
  *
  * @category    Class
- * @description Project item information
+ * @description Project item information.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

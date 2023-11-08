@@ -119,6 +119,7 @@ class RenderingJobsApi
      *
      * Creates a new rendering job and starts its execution from the very first task.
      *
+     * @param  bool $start_immediately Indicates if rendering job execution should be started immediately. (optional, default to true)
      * @param  int $tenant_id Tenant identifier. (optional)
      * @param  string $user_id Rendering job owner. (optional)
      * @param  \Aurigma\RenderingService\Model\CreateRenderingJobDto $create_rendering_job_dto Create operation parameters. (optional)
@@ -127,9 +128,9 @@ class RenderingJobsApi
      * @throws \InvalidArgumentException
      * @return \Aurigma\RenderingService\Model\RenderingJobDto
      */
-    public function renderingJobsCreate($tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
+    public function renderingJobsCreate($start_immediately = true, $tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
     {
-        list($response) = $this->renderingJobsCreateWithHttpInfo($tenant_id, $user_id, $create_rendering_job_dto);
+        list($response) = $this->renderingJobsCreateWithHttpInfo($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto);
         return $response;
     }
 
@@ -138,6 +139,7 @@ class RenderingJobsApi
      *
      * Creates a new rendering job and starts its execution from the very first task.
      *
+     * @param  bool $start_immediately Indicates if rendering job execution should be started immediately. (optional, default to true)
      * @param  int $tenant_id Tenant identifier. (optional)
      * @param  string $user_id Rendering job owner. (optional)
      * @param  \Aurigma\RenderingService\Model\CreateRenderingJobDto $create_rendering_job_dto Create operation parameters. (optional)
@@ -146,9 +148,9 @@ class RenderingJobsApi
      * @throws \InvalidArgumentException
      * @return array of \Aurigma\RenderingService\Model\RenderingJobDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderingJobsCreateWithHttpInfo($tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
+    public function renderingJobsCreateWithHttpInfo($start_immediately = true, $tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
     {
-        $request = $this->renderingJobsCreateRequest($tenant_id, $user_id, $create_rendering_job_dto);
+        $request = $this->renderingJobsCreateRequest($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto);
 
         try {
             $options = $this->createHttpClientOption();
@@ -226,6 +228,7 @@ class RenderingJobsApi
      *
      * Creates a new rendering job and starts its execution from the very first task.
      *
+     * @param  bool $start_immediately Indicates if rendering job execution should be started immediately. (optional, default to true)
      * @param  int $tenant_id Tenant identifier. (optional)
      * @param  string $user_id Rendering job owner. (optional)
      * @param  \Aurigma\RenderingService\Model\CreateRenderingJobDto $create_rendering_job_dto Create operation parameters. (optional)
@@ -233,9 +236,9 @@ class RenderingJobsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderingJobsCreateAsync($tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
+    public function renderingJobsCreateAsync($start_immediately = true, $tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
     {
-        return $this->renderingJobsCreateAsyncWithHttpInfo($tenant_id, $user_id, $create_rendering_job_dto)
+        return $this->renderingJobsCreateAsyncWithHttpInfo($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -248,6 +251,7 @@ class RenderingJobsApi
      *
      * Creates a new rendering job and starts its execution from the very first task.
      *
+     * @param  bool $start_immediately Indicates if rendering job execution should be started immediately. (optional, default to true)
      * @param  int $tenant_id Tenant identifier. (optional)
      * @param  string $user_id Rendering job owner. (optional)
      * @param  \Aurigma\RenderingService\Model\CreateRenderingJobDto $create_rendering_job_dto Create operation parameters. (optional)
@@ -255,10 +259,10 @@ class RenderingJobsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderingJobsCreateAsyncWithHttpInfo($tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
+    public function renderingJobsCreateAsyncWithHttpInfo($start_immediately = true, $tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
     {
         $returnType = '\Aurigma\RenderingService\Model\RenderingJobDto';
-        $request = $this->renderingJobsCreateRequest($tenant_id, $user_id, $create_rendering_job_dto);
+        $request = $this->renderingJobsCreateRequest($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -296,6 +300,7 @@ class RenderingJobsApi
     /**
      * Create request for operation 'renderingJobsCreate'
      *
+     * @param  bool $start_immediately Indicates if rendering job execution should be started immediately. (optional, default to true)
      * @param  int $tenant_id Tenant identifier. (optional)
      * @param  string $user_id Rendering job owner. (optional)
      * @param  \Aurigma\RenderingService\Model\CreateRenderingJobDto $create_rendering_job_dto Create operation parameters. (optional)
@@ -303,7 +308,7 @@ class RenderingJobsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function renderingJobsCreateRequest($tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
+    public function renderingJobsCreateRequest($start_immediately = true, $tenant_id = null, $user_id = null, $create_rendering_job_dto = null)
     {
 
         $resourcePath = '/api/rendering/v1/jobs';
@@ -313,6 +318,17 @@ class RenderingJobsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_immediately !== null) {
+            if('form' === 'form' && is_array($start_immediately)) {
+                foreach($start_immediately as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['startImmediately'] = $start_immediately;
+            }
+        }
         // query params
         if ($tenant_id !== null) {
             if('form' === 'form' && is_array($tenant_id)) {
@@ -2382,6 +2398,378 @@ class RenderingJobsApi
         }
 
         $resourcePath = '/api/rendering/v1/jobs/{id}/restart';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($tenant_id !== null) {
+            if('form' === 'form' && is_array($tenant_id)) {
+                foreach($tenant_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['tenantId'] = $tenant_id;
+            }
+        }
+        // query params
+        if ($user_id !== null) {
+            if('form' === 'form' && is_array($user_id)) {
+                foreach($user_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['userId'] = $user_id;
+            }
+        }
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        // aurigmafix 6
+                        if (gettype($formParamValueItem) === 'object') {
+                            if (!($formParamValueItem instanceof StreamInterface 
+                            || $formParamValueItem instanceof \Iterator 
+                            || method_exists($formParamValueItem, '__toString'))) {
+                                $formParamValueItem = json_encode($formParamValueItem);
+                            }
+                        } 
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-API-Key');
+        if ($apiKey !== null) {
+            $headers['X-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        // aurigmafix 3
+        $token = $this->config->getAccessToken();
+        if ($token !== null && $token !== '' && !ctype_space($token)) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        // aurigmafix 3
+        $token = $this->config->getAccessToken();
+        if ($token !== null && $token !== '' && !ctype_space($token)) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        // aurigmafix 3
+        $token = $this->config->getAccessToken();
+        if ($token !== null && $token !== '' && !ctype_space($token)) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation renderingJobsStart
+     *
+     * Starts the specified rendering job that has never been executed.
+     *
+     * @param  string $id Rendering job unique identifier. (required)
+     * @param  int $tenant_id Tenant identifier. (optional)
+     * @param  string $user_id Rendering job owner. (optional)
+     *
+     * @throws \Aurigma\RenderingService\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return bool|\Aurigma\RenderingService\Model\ProblemDetails|\Aurigma\RenderingService\Model\ProblemDetails
+     */
+    public function renderingJobsStart($id, $tenant_id = null, $user_id = null)
+    {
+        list($response) = $this->renderingJobsStartWithHttpInfo($id, $tenant_id, $user_id);
+        return $response;
+    }
+
+    /**
+     * Operation renderingJobsStartWithHttpInfo
+     *
+     * Starts the specified rendering job that has never been executed.
+     *
+     * @param  string $id Rendering job unique identifier. (required)
+     * @param  int $tenant_id Tenant identifier. (optional)
+     * @param  string $user_id Rendering job owner. (optional)
+     *
+     * @throws \Aurigma\RenderingService\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of bool|\Aurigma\RenderingService\Model\ProblemDetails|\Aurigma\RenderingService\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function renderingJobsStartWithHttpInfo($id, $tenant_id = null, $user_id = null)
+    {
+        $request = $this->renderingJobsStartRequest($id, $tenant_id, $user_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('bool' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'bool', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Aurigma\RenderingService\Model\ProblemDetails' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Aurigma\RenderingService\Model\ProblemDetails', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\Aurigma\RenderingService\Model\ProblemDetails' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Aurigma\RenderingService\Model\ProblemDetails', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'bool';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'bool',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aurigma\RenderingService\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aurigma\RenderingService\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation renderingJobsStartAsync
+     *
+     * Starts the specified rendering job that has never been executed.
+     *
+     * @param  string $id Rendering job unique identifier. (required)
+     * @param  int $tenant_id Tenant identifier. (optional)
+     * @param  string $user_id Rendering job owner. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function renderingJobsStartAsync($id, $tenant_id = null, $user_id = null)
+    {
+        return $this->renderingJobsStartAsyncWithHttpInfo($id, $tenant_id, $user_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation renderingJobsStartAsyncWithHttpInfo
+     *
+     * Starts the specified rendering job that has never been executed.
+     *
+     * @param  string $id Rendering job unique identifier. (required)
+     * @param  int $tenant_id Tenant identifier. (optional)
+     * @param  string $user_id Rendering job owner. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function renderingJobsStartAsyncWithHttpInfo($id, $tenant_id = null, $user_id = null)
+    {
+        $returnType = 'bool';
+        $request = $this->renderingJobsStartRequest($id, $tenant_id, $user_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'renderingJobsStart'
+     *
+     * @param  string $id Rendering job unique identifier. (required)
+     * @param  int $tenant_id Tenant identifier. (optional)
+     * @param  string $user_id Rendering job owner. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function renderingJobsStartRequest($id, $tenant_id = null, $user_id = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling renderingJobsStart'
+            );
+        }
+
+        $resourcePath = '/api/rendering/v1/jobs/{id}/start';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

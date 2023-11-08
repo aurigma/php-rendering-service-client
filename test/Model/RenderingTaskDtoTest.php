@@ -1,6 +1,6 @@
 <?php
 /**
- * RenderingJobDtoTest
+ * RenderingTaskDtoTest
  *
  * PHP version 7.2
  *
@@ -31,15 +31,15 @@ namespace Aurigma\RenderingService\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * RenderingJobDtoTest Class Doc Comment
+ * RenderingTaskDtoTest Class Doc Comment
  *
  * @category    Class
- * @description Rendering job dto class.
+ * @description RenderingTaskDto
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class RenderingJobDtoTest extends TestCase
+class RenderingTaskDtoTest extends TestCase
 {
 
     /**
@@ -71,27 +71,90 @@ class RenderingJobDtoTest extends TestCase
     }
 
     /**
-     * Test "RenderingJobDto"
+     * Test "RenderingTaskDto"
      */
-    public function testRenderingJobDto()
+    public function testRenderingTaskDto()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "project"
+     * Test attribute "description"
      */
-    public function testPropertyProject()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tasks"
+     * Test attribute "id"
      */
-    public function testPropertyTasks()
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "namespace"
+     */
+    public function testPropertyNamespace()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "input_artifacts"
+     */
+    public function testPropertyInputArtifacts()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parameters"
+     */
+    public function testPropertyParameters()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "output_artifacts"
+     */
+    public function testPropertyOutputArtifacts()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "final_artifacts"
+     */
+    public function testPropertyFinalArtifacts()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,18 +170,9 @@ class RenderingJobDtoTest extends TestCase
     }
 
     /**
-     * Test attribute "status_description"
+     * Test attribute "requested"
      */
-    public function testPropertyStatusDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "created"
-     */
-    public function testPropertyCreated()
+    public function testPropertyRequested()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,36 +197,27 @@ class RenderingJobDtoTest extends TestCase
     }
 
     /**
-     * Test attribute "tenant_id"
+     * Test attribute "processing_timeout"
      */
-    public function testPropertyTenantId()
+    public function testPropertyProcessingTimeout()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "auto_retry_count"
      */
-    public function testPropertyId()
+    public function testPropertyAutoRetryCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "owner_id"
+     * Test attribute "long_execution"
      */
-    public function testPropertyOwnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_modified"
-     */
-    public function testPropertyLastModified()
+    public function testPropertyLongExecution()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -11,12 +11,13 @@ Method | HTTP request | Description
 [**renderingJobsGetAll()**](RenderingJobsApi.md#renderingJobsGetAll) | **GET** /api/rendering/v1/jobs | Returns all rendering jobs relevant to the specified query parameters.
 [**renderingJobsRecover()**](RenderingJobsApi.md#renderingJobsRecover) | **POST** /api/rendering/v1/jobs/{id}/recover | Recovers the specified rendering job and continues its execution from the failed task.
 [**renderingJobsRestart()**](RenderingJobsApi.md#renderingJobsRestart) | **POST** /api/rendering/v1/jobs/{id}/restart | Restarts the specified rendering job and begins its execution from the very first task.
+[**renderingJobsStart()**](RenderingJobsApi.md#renderingJobsStart) | **POST** /api/rendering/v1/jobs/{id}/start | Starts the specified rendering job that has never been executed.
 
 
 ## `renderingJobsCreate()`
 
 ```php
-renderingJobsCreate($tenant_id, $user_id, $create_rendering_job_dto): \Aurigma\RenderingService\Model\RenderingJobDto
+renderingJobsCreate($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto): \Aurigma\RenderingService\Model\RenderingJobDto
 ```
 
 Creates a new rendering job and starts its execution from the very first task.
@@ -54,12 +55,13 @@ $apiInstance = new Aurigma\RenderingService\Api\RenderingJobsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$start_immediately = true; // bool | Indicates if rendering job execution should be started immediately.
 $tenant_id = 56; // int | Tenant identifier.
 $user_id = 'user_id_example'; // string | Rendering job owner.
 $create_rendering_job_dto = new \Aurigma\RenderingService\Model\CreateRenderingJobDto(); // \Aurigma\RenderingService\Model\CreateRenderingJobDto | Create operation parameters.
 
 try {
-    $result = $apiInstance->renderingJobsCreate($tenant_id, $user_id, $create_rendering_job_dto);
+    $result = $apiInstance->renderingJobsCreate($start_immediately, $tenant_id, $user_id, $create_rendering_job_dto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RenderingJobsApi->renderingJobsCreate: ', $e->getMessage(), PHP_EOL;
@@ -70,6 +72,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start_immediately** | **bool**| Indicates if rendering job execution should be started immediately. | [optional] [default to true]
  **tenant_id** | **int**| Tenant identifier. | [optional]
  **user_id** | **string**| Rendering job owner. | [optional]
  **create_rendering_job_dto** | [**\Aurigma\RenderingService\Model\CreateRenderingJobDto**](../Model/CreateRenderingJobDto.md)| Create operation parameters. | [optional]
@@ -537,6 +540,84 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RenderingJobsApi->renderingJobsRestart: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Rendering job unique identifier. |
+ **tenant_id** | **int**| Tenant identifier. | [optional]
+ **user_id** | **string**| Rendering job owner. | [optional]
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [jwtBearer](../../README.md#jwtBearer), [oauth2-clientCredentials](../../README.md#oauth2-clientCredentials), [oauth2-code](../../README.md#oauth2-code), [oauth2-implicit](../../README.md#oauth2-implicit)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `renderingJobsStart()`
+
+```php
+renderingJobsStart($id, $tenant_id, $user_id): bool
+```
+
+Starts the specified rendering job that has never been executed.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Configure API key authorization: jwtBearer
+$config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure OAuth2 access token for authorization: oauth2-clientCredentials
+$config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: oauth2-code
+$config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: oauth2-implicit
+$config = Aurigma\RenderingService\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Aurigma\RenderingService\Api\RenderingJobsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | Rendering job unique identifier.
+$tenant_id = 56; // int | Tenant identifier.
+$user_id = 'user_id_example'; // string | Rendering job owner.
+
+try {
+    $result = $apiInstance->renderingJobsStart($id, $tenant_id, $user_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RenderingJobsApi->renderingJobsStart: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * ProjectInfoTest Class Doc Comment
  *
  * @category    Class
- * @description Project information
+ * @description Project information.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -107,9 +107,36 @@ class ProjectInfoTest extends TestCase
     }
 
     /**
-     * Test attribute "product_specification"
+     * Test attribute "order_id"
      */
-    public function testPropertyProductSpecification()
+    public function testPropertyOrderId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "order_number"
+     */
+    public function testPropertyOrderNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "customer_id"
+     */
+    public function testPropertyCustomerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "customer_name"
+     */
+    public function testPropertyCustomerName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

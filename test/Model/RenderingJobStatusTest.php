@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * RenderingJobStatusTest Class Doc Comment
  *
  * @category    Class
- * @description Rendering job status
+ * @description Rendering job status.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

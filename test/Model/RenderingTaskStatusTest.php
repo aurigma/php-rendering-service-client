@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * RenderingTaskStatusTest Class Doc Comment
  *
  * @category    Class
- * @description RenderingTaskStatus
+ * @description Defines available rendering task statuses.
  * @package     Aurigma\RenderingService
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
